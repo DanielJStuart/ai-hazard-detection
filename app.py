@@ -42,10 +42,11 @@ if uploaded_images and job_type:
         
         # Perform hazard detection
         hazards = detect_hazards(image, job_type)
-        
-        # Display detected hazards
-        st.write("#### Detected Hazards:")
-        for hazard in hazards:
-            st.write(f"- {hazard}")
 
-st.write("\n\n_Note: This is an early prototype. AI hazard detection will improve with training data._")
+        # Display detected hazards
+        if hazards:
+            st.write("#### Detected Hazards:")
+            for hazard in hazards:
+                st.write(f"- {hazard}")
+        else:
+            st.write("No hazards detected (yet). AI model improvements required.")
