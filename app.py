@@ -39,7 +39,8 @@ if uploaded_images and job_type:
     
     for uploaded_file in uploaded_images:
         image = Image.open(uploaded_file)
-        st.image(image, caption=f"Uploaded: {uploaded_file.name}", use_column_width=True)
+        st.image(image, caption=f"Uploaded: {uploaded_file.name}", use_container_width=True)
+
         
         # Perform hazard detection
         hazards = detect_hazards(image, job_type)
